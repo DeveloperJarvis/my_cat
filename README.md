@@ -13,7 +13,7 @@ sudo apt install gcc -y
 ## Compile using gcc
 
 ```bash
-gcc -g -Wall -Wextra -o my_echo.out my_echo.c
+gcc -g -Wall -Wextra -o my_cat.out my_cat.c
 ```
 
 ## Execute the object file
@@ -21,10 +21,12 @@ gcc -g -Wall -Wextra -o my_echo.out my_echo.c
 1. Simple execute
 
 ```bash
-./my_echo.out
-./my_echo.out -n
-./my_echo.out -n Hello World
-./my_echo.out Hello World
+# ./my_cat.out
+./my_cat.out
+# ./my_cat.out <file name>
+./my_cat.out first.txt
+# ./my_cat.out <first file name> <second file name>
+./my_cat.out first.txt second.txt
 ```
 
 ## For Windows:
@@ -44,8 +46,8 @@ gcc -g -Wall -Wextra -o my_echo.out my_echo.c
 ### Compile using gcc
 
 ```bash
-clang -c my_echo.c -o my_echo.o
-clang my_echo.o -o my_echo_x64.exe
+clang -c my_cat.c -o my_cat.o
+clang my_cat.o -o my_cat_x64.exe
 ```
 
 ### Execute the object file
@@ -53,11 +55,12 @@ clang my_echo.o -o my_echo_x64.exe
 1. Simple execute
 
 ```bash
-# encrypting
-my_echo_x64.exe
-my_echo_x64.exe -n
-my_echo_x64.exe -n Hello World
-my_echo_x64.exe Hello World
+# my_cat_x64.exe
+my_cat_x64.exe
+# my_cat_x64.exe <file name>
+my_cat_x64.exe first.txt
+# my_cat_x64.exe <first file name> <second file name>
+my_cat_x64.exe first.txt second.txt
 ```
 
 ## Creating tag
