@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 #if defined(_MSC_VER)
 #define FOPEN(fptr, filename, mode) fopen_s(&fptr, filename, mode)
 #else
@@ -11,17 +10,17 @@
 void cat_stream(FILE *fp)
 {
 	int c;
-	while((c = fgetc(fp)) != EOF)
+	while ((c = fgetc(fp)) != EOF)
 	{
 		putchar(c);
 	}
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-	//if(argc == 1)
+	// if(argc == 1)
 	//{
-		// No arguments: read from stdin
+	//  No arguments: read from stdin
 	//	printf("Usage: %s <first file> <second file>", argv[0]);
 	//}
 	if (argc == 1)
@@ -42,7 +41,7 @@ int main(int argc, char* argv[])
 
 		FILE *fp;
 		FOPEN(fp, argv[i], "rb");
-		if(!fp)
+		if (!fp)
 		{
 			perror(argv[i]);
 			continue;
@@ -51,7 +50,6 @@ int main(int argc, char* argv[])
 		cat_stream(fp);
 		fclose(fp);
 	}
-
 
 	return 0;
 }
